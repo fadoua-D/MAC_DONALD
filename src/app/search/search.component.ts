@@ -1,12 +1,11 @@
-import { Component, OnInit, EventEmitter, Output, ChangeDetectorRef} from '@angular/core';
+import { Component, OnInit,ElementRef, ViewChild, EventEmitter, Output, ChangeDetectorRef} from '@angular/core';
 //import { FormsModule, NgForm } from '@angular/forms';
 import { ReactiveFormsModule, FormControl, Validators} from '@angular/forms'
 import { Observable } from 'rxjs';
 import { ApiService } from '../services/api.service';
-import { AsyncPipe, NgFor, NgIf } from '@angular/common';
-import { ElementRef, ViewChild } from '@angular/core';
+import { AsyncPipe, NgFor, NgIf} from '@angular/common';
 import { Place } from '../models/place';
-import { map, switchMap} from 'rxjs/operators';
+//import { map, switchMap} from 'rxjs/operators';
 
 
 @Component({
@@ -15,8 +14,8 @@ import { map, switchMap} from 'rxjs/operators';
     ReactiveFormsModule,
     AsyncPipe,
     NgFor,
-    NgIf,
-   // FormsModule
+    NgIf
+   // NgStyle
   ],
   templateUrl: './search.component.html',
   styleUrl: './search.component.scss',
@@ -79,35 +78,14 @@ export class SearchComponent implements OnInit {
     // )
     .subscribe((result) => {
       this.restaurants = result;
-      // result.forEach(element => {
-      //   const topush = {
-      //     category : element.category,
-      //     display_name: element.display_name,
-      //     lat: Number(element.lat),
-      //     lon: Number(element.lon),
-      //     name: element.name,
-      //     place_id: element.place_id,
-      //     type: element.type,
-      //   }
-      //   this.macDonalds.push(topush);
-      // });
-
-      // console.log('**********************');
-      // console.log('this.macDonalds', this.macDonalds);
-      // console.log('**********************');
-
         // Émet les restaurants vers le ParentComponent
         this.restaurantsEmit.emit(result);
         //this.cdr.detectChanges(); // Forcer la mise à jour
 
-    })
-   
+    }) 
     
   }
   
-  // sendData() {
-  //   this.dataEmitter.emit('Hello from Child A');
-  // }
 
 
 

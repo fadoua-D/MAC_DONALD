@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges, AfterViewInit } from '@angular/core';
+import { Component, OnInit, Input, Output, OnChanges, SimpleChanges, AfterViewInit, EventEmitter } from '@angular/core';
 import { LeafletModule } from '@bluehalo/ngx-leaflet';
 import * as L from 'leaflet';
 import { Place } from '../models/place';
@@ -17,10 +17,15 @@ export class MapComponent  implements OnInit, OnChanges, AfterViewInit {
   @Input() restaurants: Place[] = [];
   @Input() receivedObject: any;
 
+  @Output() restaurantSelected = new EventEmitter<string>();
+
+
+
   map: any; // Référence à la carte
   cityName: string = 'Paris';  // Ville par défaut
   lat: number = 48.8566; // Latitude par défaut (Paris)
   lon: number = 2.3522;  // Longitude par défaut (Paris)
+
 
   // Liste des marqueurs
   markers: L.Marker[] = [];
@@ -115,7 +120,7 @@ export class MapComponent  implements OnInit, OnChanges, AfterViewInit {
           <div>
             <p>${restaurant.display_name}</p>
             <button id="popup-button" class="btn btn-choice">
-              Cliquez ici
+              Choisir
             </button>
           </div>
         `)
@@ -124,7 +129,8 @@ export class MapComponent  implements OnInit, OnChanges, AfterViewInit {
           const button = document.getElementById('popup-button');
           if (button) {
             button.addEventListener('click', () => {
-              alert('Bouton cliqué !');
+             // alert('Bouton cliqué !');
+              this.restaurantSelected.emit(restaurant.display_name); // Émettre le restaurant sélectionné
             });
           }
         }); 

@@ -1,6 +1,7 @@
 body{
     margin: 0px;
     padding: 0px;
+    //font-size: 14px;
 }
 #map{
     background: #FFFFFF;
@@ -15,15 +16,15 @@ body{
 .search{
    height: auto;
    top: 16px;
-   right: 2%;
+   left: 5%;
    position: absolute;
    //gap: 0px;
-   border-radius: 8px 0px 0px 0px;
+   border-radius: 8px;
    background: #FFFFFF87;
 //    backdrop-filter: blur(8px);
    box-shadow: 0px 4px 4px 0px #00000040; 
    opacity:0px;
-   z-index: 2;
+   z-index: 4;
    padding: 10px;
   
 }
@@ -65,17 +66,27 @@ footer{
     cursor: pointer;
     opacity: 0px;
 }
-.btn-choice :hover{
+.btn-choice:hover{
     background: #F0C900 !important;
 }
 
 .dropdown-menu{
     display: block;
     position: relative;
-    overflow-x: scroll;
+    overflow-y: scroll;
 }
+.dropdown-menu li {
+    height: auto; 
+    //padding: 0.5rem 1rem;
+    line-height: normal !important;
+}
+.dropdown-menu li:hover {
+    background-color: #f8f9fa;
+}
+  
 .dropdown-item{
     height: auto !important;
+    line-height: normal !important;
     //overflow: hidden;
 }
 .input-group-text{
@@ -91,4 +102,8 @@ footer{
 .erro{
     font-size: x-small;
     color: red;
+}
+h3{
+    font-size: 16px;
+    font-weight: bold;
 }

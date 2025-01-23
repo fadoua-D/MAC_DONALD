@@ -1,3 +1,14 @@
 <footer class="fixed-bottom">
-    <p>Aucun restaurant séléctionné</p>
+    <div *ngIf="restaurantDetails ;else noSelection">
+        <h3>Restaurant sélectionné :</h3>
+        <p>{{ restaurantDetails }}</p>
+        <button class="btn btn-choice">
+            Continuer
+        </button>
+    </div>
+
+    <ng-template #noSelection>
+        <h3>Aucun restaurant séléctionné</h3>
+    </ng-template>
+    
 </footer>
