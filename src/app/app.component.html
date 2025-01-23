@@ -1,4 +1,9 @@
-<app-map></app-map>
+<app-map [restaurants]="restaurants" [receivedObject]="sharedObject" ></app-map>
+<app-search (restaurantsEmit)="updateRestaurants($event)" (cityInfoEmitted)="receiveObject($event)" ></app-search>
 
-<!-- <router-outlet /> -->
+<app-footer></app-footer>
+
+
+<!-- 
+<router-outlet /> -->
 

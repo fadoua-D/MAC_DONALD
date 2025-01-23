@@ -1,0 +1,30 @@
+<div class="col-md-4 col-xl-4 search">
+    <form  #ResearchForm>
+        <div class="col-auto">
+            <label for="city" class="form-label">Rechercher un restaurant</label>
+        </div>
+
+        <div class="input-group rounded">
+            <input type="text" (keyup)="recupererVille($event)" [formControl]="city" id="city" name="city" class="form-control rounded" placeholder="Entrez le nom de la ville" />
+            <!-- @if (city.invalid && (city.dirty || city.touched)) {
+                <div class="error">Renseigner la ville</div>
+            } -->
+            <button  (click)="restaurantList($event)" class="input-group-text border-0">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+    </form>
+    
+    <ul class="dropdown-menu" *ngIf="cities$ | async"  #cityAdress >
+        <li *ngFor="let ville of cities$ | async"  (click)="onSelected(ville.display_name)" ><a class="dropdown-item" href="#">{{ ville.display_name }}</a></li>
+    </ul>
+
+    <!-- <ul class="dropdown-menu" *ngIf="restaurants" >
+        <li *ngFor="let restaurant of restaurants" ><a class="dropdown-item" href="#">{{ restaurant.name }}</a></li>
+    </ul> -->
+
+
+</div>
+
+
+

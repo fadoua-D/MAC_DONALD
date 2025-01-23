@@ -1,0 +1,58 @@
+[
+    {
+        "place_id": 88102504,
+        "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+        "osm_type": "relation",
+        "osm_id": 29366,
+        "lat": "48.7079028",
+        "lon": "2.3890941",
+        "category": "boundary",
+        "type": "administrative",
+        "place_rank": 16,
+        "importance": 0.5465371150686906,
+        "addresstype": "town",
+        "name": "Athis-Mons",
+        "display_name": "Athis-Mons, Palaiseau, Essonne, Île-de-France, France métropolitaine, 91200, France",
+        "boundingbox": [
+            "48.6918424",
+            "48.7265834",
+            "2.3538076",
+            "2.4157295"
+        ]
+    }
+
+
+  {
+    "address": {
+      "ISO3166-2-lvl4": "DE-BE",
+      "borough": "Mitte",
+      "city": "Berlin",
+      "country": "Deutschland",
+      "country_code": "de",
+      "neighbourhood": "Sprengelkiez",
+      "postcode": "13347",
+      "road": "Lindower Straße",
+      "shop": "Ditsch",
+      "suburb": "Wedding"
+    },
+    "addresstype": "shop",
+    "boundingbox": [
+      "52.5427201",
+      "52.5427654",
+      "13.3668619",
+      "13.3669442"
+    ],
+    "category": "shop",
+    "display_name": "Ditsch, Lindower Straße, Sprengelkiez, Wedding, Mitte, Berlin, 13347, Deutschland",
+    "importance": 9.99999999995449e-06,
+    "lat": "52.54274275",
+    "licence": "Data © OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright",
+    "lon": "13.36690305710228",
+    "name": "Ditsch",
+    "osm_id": 437595031,
+    "osm_type": "way",
+    "place_id": 204751033,
+    "place_rank": 30,
+    "type": "bakery"
+  }
+]
