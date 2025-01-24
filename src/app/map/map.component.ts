@@ -129,7 +129,6 @@ export class MapComponent  implements OnInit, OnChanges, AfterViewInit {
           const button = document.getElementById('popup-button');
           if (button) {
             button.addEventListener('click', () => {
-             // alert('Bouton cliqué !');
               this.restaurantSelected.emit(restaurant.display_name); // Émettre le restaurant sélectionné
             });
           }

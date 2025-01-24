@@ -58,6 +58,7 @@ export class SearchComponent implements OnInit {
 
   restaurantList(e:Event){
     e.preventDefault();
+    // Récupérer les détails de la ville sélectionné dans la liste des choix
     this.apiService.getCityCoordinates(this.city.getRawValue()).subscribe(data => {
       if (data && data[0]) {
         // Extraire le nom la latitude et la longitude de la réponse
@@ -67,18 +68,15 @@ export class SearchComponent implements OnInit {
           lon: parseFloat(data[0].lon)
         };
 
-        this.cityInfoEmitted.emit(cityInfo); // Émettre l'objet au parent
+        this.cityInfoEmitted.emit(cityInfo); // Émettre l'objet avec les détails sur la ville à l'appComponent
       }
     });
- 
+
+    // Récupérer la liste des restaurants MacDonals de la ville
     this.apiService.getAllRestaurants(this.city.getRawValue())
-    // .pipe(
-    //   debounceTime(400),  // Attend 400ms après la dernière frappe
-    //   distinctUntilChanged() // Ignore si la valeur n'a pas changé
-    // )
     .subscribe((result) => {
       this.restaurants = result;
-        // Émet les restaurants vers le ParentComponent
+        // Émet les restaurants vers le appComponent
         this.restaurantsEmit.emit(result);
         //this.cdr.detectChanges(); // Forcer la mise à jour
 
